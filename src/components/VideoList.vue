@@ -1,5 +1,5 @@
 <template>
-        <ul>
+        <ul class="videoList">
                 <VideoListItem v-for="video in videos" :key="video.etag" :video="video" />
         </ul>
 </template>
@@ -14,6 +14,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+        .videoList{
+                list-style-type: none;
+        }
 </style>
