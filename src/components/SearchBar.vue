@@ -18,6 +18,7 @@ export default {
     methods:{
       handleSubmit(){
           this.$emit('termChange',this.searchTerm);
+          this.searchTerm='';
       }
     }
 }

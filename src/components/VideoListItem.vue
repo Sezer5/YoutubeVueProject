@@ -31,6 +31,7 @@ export default {
         margin: 20px;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         align-items: center;
+        width: 100%;
     }
     .videoImg{
         border-radius: 30px 0px 0px 30px;

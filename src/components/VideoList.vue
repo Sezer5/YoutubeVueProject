@@ -23,5 +23,6 @@ export default {
 <style scoped>
         .videoList{
                 list-style-type: none;
+                width: 100%;
         }
 </style>
