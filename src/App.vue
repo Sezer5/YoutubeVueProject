@@ -4,24 +4,30 @@
     <div class="container">
       <h1 class="title">Youtube Uygulaması</h1>
       <SearchBar @termChange="onTermChange"/>
-      <VideoList :videos="videos"/>
+      <div>
+          <VideoDetail :video="selectedVideo" />
+          <VideoList @videoSelect="onVideoSelect" :videos="videos"/>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import SearchBar from './components/SearchBar.vue';
-import VideoList from './components/VideoList.vue';
+import SearchBar from './components/SearchBar.vue'
+import VideoList from './components/VideoList.vue'
+import VideoDetail from './components/VideoDetail.vue'
 import axios from 'axios'
 export default {
   name: 'App',
   components: {
       SearchBar,
-      VideoList
+      VideoList,
+      VideoDetail
   },
   data(){
     return{
         videos:[],
+        selectedVideo:null
     }
   },
   methods:{
@@ -41,6 +47,9 @@ export default {
             .catch(response=>  {
                 console.log(response);
             });
+      },
+      onVideoSelect(video){
+            this.selectedVideo=video;
       }
   }
 }

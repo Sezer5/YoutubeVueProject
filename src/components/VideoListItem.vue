@@ -1,5 +1,5 @@
 <template>
-        <li class="videoItem">
+        <li class="videoItem" @click="onVideoSelect">
             <img class="videoImg" :src="imageUrl">
             <div>{{video.snippet.title}}</div>
         </li>
@@ -9,9 +9,15 @@
 <script>
 export default {
     props:['video'],
+    emits:['videoSelect'],
     computed:{
         imageUrl(){
             return this.video.snippet.thumbnails.medium.url;
+        }
+    },
+    methods:{
+        onVideoSelect(){
+            this.$emit('videoSelect',this.video)
         }
     }
 }
